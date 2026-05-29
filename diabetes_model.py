@@ -7,6 +7,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, confusion_matrix
 
 # Load and clean data
@@ -29,7 +30,8 @@ X_test = scaler.transform(X_test)
 models = {
     "Logistic Regression": LogisticRegression(),
     "Decision Tree":       DecisionTreeClassifier(random_state=42),
-    "Random Forest":       RandomForestClassifier(n_estimators=100, random_state=42)
+    "Random Forest":       RandomForestClassifier(n_estimators=100, random_state=42),
+    "SVM":                 SVC(kernel='rbf', random_state=42)
 }
 
 print("--- Model Comparison ---")
